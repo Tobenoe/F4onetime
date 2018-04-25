@@ -6,50 +6,13 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.zs.onetime.MainActivity">
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/main_viewPager"
+<include layout="@layout/titletab_layout"></include>
+    <com.hjm.bottomtabbar.BottomTabBar
+        android:id="@+id/bottom_tab_bar"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="9">
+        android:layout_height="match_parent"
+        >
+    </com.hjm.bottomtabbar.BottomTabBar>
 
-    </android.support.v4.view.ViewPager>
-
-    <RadioGroup
-        android:id="@+id/main_radioGroup"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal">
-
-        <RadioButton
-            android:id="@+id/main_radioGroup_radio1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/main_selector"
-            android:layout_weight="1"
-            android:button="@null"
-            />
-
-        <RadioButton
-            android:id="@+id/main_radioGroup_radio2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/main_selector2"
-            android:layout_weight="1"
-            android:button="@null" />
-
-        <RadioButton
-            android:id="@+id/main_radioGroup_radio3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/main_selector3"
-            android:layout_weight="1"
-            android:button="@null"
-
-            />
-
-    </RadioGroup>
 
 </LinearLayout>
