@@ -20,6 +20,7 @@ import com.stx.xhb.xbanner.XBanner;
 
 /**
  * Created by work on 2018/4/25.
+ * 推荐正式版
  */
 
 public class RecommendFhot extends BaseFragment implements BannerVinterface {
@@ -48,7 +49,7 @@ public class RecommendFhot extends BaseFragment implements BannerVinterface {
         bannerP.getBanner();
 
     }
-    
+
     @Override
     public void OnBanner(Object o) {
 
