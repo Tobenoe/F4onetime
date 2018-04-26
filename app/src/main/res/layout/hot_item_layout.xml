@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.facebook.drawee.view.SimpleDraweeView
+        android:id="@+id/hot_item_img"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        fresco:placeholderImage="@drawable/user_no_image"
+        fresco:placeholderImageScaleType="fitCenter"
+        fresco:roundAsCircle="true" />
+
+    <TextView
+        android:id="@+id/hot_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:layout_toEndOf="@+id/hot_item_img"
+        android:layout_toRightOf="@+id/hot_item_img"
+        android:text="name" />
+
+
+    <TextView
+        android:id="@+id/hot_item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/hot_item_img"
+        android:layout_alignEnd="@+id/hot_item_name"
+        android:layout_alignRight="@+id/hot_item_name"
+        android:text="time" />
+
+
+    <ImageView
+        android:id="@+id/hot_item_amin_"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/hot_item_time"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="11dp"
+        android:layout_marginRight="11dp"
+        android:src="@drawable/user_no_image" />
+
+   
+
+
+</RelativeLayout>

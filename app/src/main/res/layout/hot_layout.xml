@@ -5,14 +5,11 @@
     android:orientation="vertical"
     android:background="#f00">
 
-    <com.stx.xhb.xbanner.XBanner
-        android:id="@+id/hot_banner"
+    <com.youth.banner.Banner
+
+        android:id="@+id/banner"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="2">
-
-
-    </com.stx.xhb.xbanner.XBanner>
+        android:layout_height="150dp" />
 
     <com.jcodecraeer.xrecyclerview.XRecyclerView
         android:id="@+id/hot_recylerView"

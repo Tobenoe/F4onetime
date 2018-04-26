@@ -23,8 +23,8 @@ public class Api {
 //      //发布视频
 //      public static final String RELESE = ONTETIME+"publishVideo ";
 //
-//    //获取视频列表
-//    public static final String VLIE = ONTETIME+"getVideos ";
+     //获取视频列表
+        public static final String VLIE = ONTETIME;
 //
 //    //获取某个用户的视频作品集
 //    public  static final String PSGVIDEO = ONTETIME+"getUserVideos  ";
