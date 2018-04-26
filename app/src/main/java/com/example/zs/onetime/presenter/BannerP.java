@@ -1,9 +1,7 @@
 package com.example.zs.onetime.presenter;
 
 
-import com.example.zs.onetime.moudel.BannerM;
 
-import com.example.zs.onetime.base.BasePresenter;
 
 
 import com.example.zs.onetime.moudel.GetDataM;
@@ -22,11 +20,10 @@ public class BannerP implements BannerPinterface {
     private BannerVinterface bannerVinterface;
 
 
+    @Override
+    public void OnBanner(Object o) {
 
-
-
-
-        
+    }
 
     @Override
     public void onDestroy() {
@@ -39,5 +36,6 @@ public class BannerP implements BannerPinterface {
 
 
     }
+}
 
 

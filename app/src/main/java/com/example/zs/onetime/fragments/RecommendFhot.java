@@ -45,8 +45,8 @@ public class RecommendFhot extends BaseFragment implements BannerVinterface {
     @Override
     protected void initData() {
 
-        bannerP = new BannerP(this);
-        bannerP.getBanner();
+//        bannerP = new BannerP(this);
+//        bannerP.getBanner();
 
     }
 
