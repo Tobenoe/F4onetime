@@ -6,7 +6,7 @@ package com.example.zs.onetime.api;
 
 public class Api {
     //主接口
-    static  final  String  ONTETIME = "https://www.zhaoapi.cn/quarter/";
+   static  final  String  ONTETIME = "https://www.zhaoapi.cn/quarter/";
    //广告接口 https://www.zhaoapi.cn/quarter/getAd
     static final  String  ADV = ONTETIME+"getAd";
     //.版本更新接口
