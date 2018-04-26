@@ -22,10 +22,4 @@ public interface ApiService {
 
 
 
-
-
-
-
-
-
 }
