@@ -14,12 +14,13 @@ import org.reactivestreams.Subscription;
 import io.reactivex.Flowable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
+import io.reactivex.subscribers.DefaultSubscriber;
 
 /**
  * Created by work on 2018/4/25.
  */
 
-public class BannerM {
+public class GetDataM {
 
 
     public void getBanner(final BannerPinterface bannerPinterface){
@@ -28,18 +29,13 @@ public class BannerM {
         Flowable<BannerBen> flowable = apiService.getBeanner();
         flowable.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<BannerBen>() {
-                    @Override
-                    public void onSubscribe(Subscription s) {
-
-                        Log.i("TAG",s.toString());
-                    }
-
+                .subscribeWith(new DefaultSubscriber<BannerBen>() {
                     @Override
                     public void onNext(BannerBen bannerBen) {
-                        Log.i("TAG",bannerBen.getCode()+"------------");
 
+                        Log.i("TAG",bannerBen.getCode()+"----------------");
                         bannerPinterface.OnBanner(bannerBen);
+
                     }
 
                     @Override
@@ -52,7 +48,6 @@ public class BannerM {
 
                     }
                 });
-
 
     }
 

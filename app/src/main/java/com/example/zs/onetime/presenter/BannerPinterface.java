@@ -8,7 +8,7 @@ public interface BannerPinterface {
 
 
     void OnBanner(Object o);
-    void onDestroy();
+
 
 
 

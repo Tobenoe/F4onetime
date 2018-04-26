@@ -1,12 +1,14 @@
 package com.example.zs.onetime.fragments;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.zs.onetime.R;
 import com.example.zs.onetime.base.BaseFragment;
+import com.example.zs.onetime.bean.BannerBen;
 import com.example.zs.onetime.presenter.BannerP;
 import com.example.zs.onetime.view.BannerVinterface;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -47,7 +49,10 @@ public class RecommendFhot extends BaseFragment implements BannerVinterface{
     @Override
     public void OnBanner(Object o) {
 
-        
+        BannerBen bannerBen = (BannerBen) o;
+        Log.i("TAG",bannerBen.getCode()+"base");
+
 
     }
+
 }
