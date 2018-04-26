@@ -17,6 +17,8 @@ import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.List;
 
+import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
+
 /**
  * Created by work on 2018/4/26.
  */
@@ -49,6 +51,7 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.hotMyViewHodler>
         holder.hot_item_name.setText(data.get(position).getUser().getNickname());
         holder.hot_item_time.setText(data.get(position).getCreateTime());
         String videoUrl = data.get(position).getVideoUrl();
+        holder.videoplayer.setUp(videoUrl,data.get(position).getWorkDesc()+"");
 
 
 
@@ -66,6 +69,7 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.hotMyViewHodler>
         private final TextView hot_item_name;
         private final TextView hot_item_time;
         private final ImageView hot_item_amin_;
+        private final JCVideoPlayer videoplayer;
 
 
         public hotMyViewHodler(View itemView) {
@@ -75,7 +79,7 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.hotMyViewHodler>
             hot_item_name = itemView.findViewById(R.id.hot_item_name);
             hot_item_time = itemView.findViewById(R.id.hot_item_time);
             hot_item_amin_ = itemView.findViewById(R.id.hot_item_amin_);
-
+            videoplayer = itemView.findViewById(R.id.mvPlayer);
 
 
         }
