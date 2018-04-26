@@ -14,6 +14,9 @@ import com.example.zs.onetime.view.BannerVinterface;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.stx.xhb.xbanner.XBanner;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by work on 2018/4/25.
  * 推荐正式版
@@ -24,6 +27,7 @@ public class RecommendFhot extends BaseFragment implements BannerVinterface {
     private XBanner mHotBanner;
     private XRecyclerView mHotRecylerView;
     private BannerP bannerP;
+    private List<String>list_path;
 
     @Override
     protected int getLayout() {
@@ -43,6 +47,11 @@ public class RecommendFhot extends BaseFragment implements BannerVinterface {
 
         bannerP = new BannerP(this);
         bannerP.getBanner();
+        list_path = new ArrayList<>();
+
+
+
+
 
     }
 
@@ -51,6 +60,13 @@ public class RecommendFhot extends BaseFragment implements BannerVinterface {
 
         BannerBen bannerBen = (BannerBen) o;
         Log.i("TAG", bannerBen.getCode() + "base");
+        List<BannerBen.DataBean> data = bannerBen.getData();
+        for(int i = 0 ;i < data.size() ; i++){
+            String icon = data.get(i).getIcon();
+            list_path.add(icon);
+
+        }
+
 
 
     }
