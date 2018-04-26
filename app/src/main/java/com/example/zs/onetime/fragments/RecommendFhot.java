@@ -22,7 +22,7 @@ import com.stx.xhb.xbanner.XBanner;
  * Created by work on 2018/4/25.
  */
 
-public class RecommendFhot extends BaseFragment implements BannerVinterface{
+public class RecommendFhot extends BaseFragment implements BannerVinterface {
     private View view;
     private XBanner mHotBanner;
     private XRecyclerView mHotRecylerView;
@@ -48,8 +48,7 @@ public class RecommendFhot extends BaseFragment implements BannerVinterface{
         bannerP.getBanner();
 
     }
-
-
+    
     @Override
     public void OnBanner(Object o) {
 
@@ -61,6 +60,16 @@ public class RecommendFhot extends BaseFragment implements BannerVinterface{
 
 
 
+
+
+
+
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        bannerP.onDestroy();
+
+    }
 }
