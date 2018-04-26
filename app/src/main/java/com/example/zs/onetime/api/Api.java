@@ -5,7 +5,10 @@ package com.example.zs.onetime.api;
  */
 
 public class Api {
-    //主接口
+
+
+
+
     public static  final  String  ONTETIME = "https://www.zhaoapi.cn/quarter/";
     //广告接口 https://www.zhaoapi.cn/quarter/getAd
     public static final  String  ADV = ONTETIME;
@@ -65,5 +68,6 @@ public class Api {
 //    public static final String COLLECT = ONTETIME+"getFavorites ";
 //    //修改年龄
 //    public static final String UPDATEAGE = ONTETIME+"updateAge ";
+
 
 }

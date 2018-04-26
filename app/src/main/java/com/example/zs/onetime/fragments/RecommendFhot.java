@@ -26,8 +26,9 @@ public class RecommendFhot extends BaseFragment implements BannerVinterface {
     private View view;
     private XBanner mHotBanner;
     private XRecyclerView mHotRecylerView;
-    private BannerP bannerP;
+//    private BannerP bannerP;
     private List<String>list_path;
+    private BannerP bannerP;
 
     @Override
     protected int getLayout() {
@@ -44,6 +45,9 @@ public class RecommendFhot extends BaseFragment implements BannerVinterface {
 
     @Override
     protected void initData() {
+
+//        bannerP = new BannerP(this);
+//        bannerP.getBanner();
 
         bannerP = new BannerP(this);
         bannerP.getBanner();
