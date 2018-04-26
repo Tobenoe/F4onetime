@@ -6,10 +6,9 @@ package com.example.zs.onetime.presenter;
 
 public interface BannerPinterface {
 
-
     void OnBanner(Object o);
 
-
+    void onDestroy();
 
 
 }
