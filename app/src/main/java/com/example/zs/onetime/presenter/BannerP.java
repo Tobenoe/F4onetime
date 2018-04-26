@@ -13,13 +13,7 @@ import com.example.zs.onetime.view.BannerVinterface;
  */
 
 
-
-
-
-
-
-
-        public class BannerP extends BasePresenter<BannerPinterface> implements BannerPinterface {
+public class BannerP extends BasePresenter<BannerPinterface> implements BannerPinterface {
     private GetDataM getDataM;
     private BannerVinterface bannerVinterface;
 

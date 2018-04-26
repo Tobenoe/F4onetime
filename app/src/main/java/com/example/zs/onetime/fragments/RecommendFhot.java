@@ -45,7 +45,7 @@ public class RecommendFhot extends BaseFragment implements BannerVinterface {
     @Override
     protected void initData() {
 
-        bannerP = new BannerP(getActivity());
+        bannerP = new BannerP(this);
         bannerP.getBanner();
 
     }
@@ -53,19 +53,19 @@ public class RecommendFhot extends BaseFragment implements BannerVinterface {
     @Override
     public void OnBanner(Object o) {
 
-        
-
-    }
-
         BannerBen bannerBen = (BannerBen) o;
 
-
-
-
-
-
-
     }
+
+
+
+
+
+
+
+
+
+
 
     @Override
     public void onDestroy() {
