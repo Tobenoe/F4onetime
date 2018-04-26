@@ -12,18 +12,8 @@ import com.example.zs.onetime.view.BannerVinterface;
  */
 
 
-public class BannerP implements BannerPinterface {
-    private BannerM bannerM;
-    private BannerVinterface bannerVinterface;
 
-    public void getBanner() {
 
-        bannerM.getBanner(this);
-
-    }
-
-    public BannerP(BannerVinterface bannerVinterface) {
-        this.bannerM = new BannerM();
 
         public class BannerP extends BasePresenter<BannerPinterface> implements BannerPinterface {
             private GetDataM getDataM;
@@ -58,5 +48,5 @@ public class BannerP implements BannerPinterface {
         }
 
 
-    }
-}
+
+

@@ -58,7 +58,7 @@ public class RecommendFhot extends BaseFragment implements BannerVinterface{
     }
 
         BannerBen bannerBen = (BannerBen) o;
-       // Log.i("TAG",bannerBen.getCode()+"base");
+
 
 
     }
