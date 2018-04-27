@@ -44,6 +44,7 @@ public class Api {
 //
 //    //视频作品详情
 //    public static final String VIDXQ = ONTETIME+"getVideoDetail ";
+
 //    //段子详情
 //    public static final String DZXQ = ONTETIME+"getJokeDetail ";
 //    //段子点赞

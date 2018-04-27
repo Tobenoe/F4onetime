@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:fab_size="mini"
+    app:fab_icon="@drawable/pinbi"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:layout_gravity="center_vertical"
+        android:layout_alignParentRight="true"
+        app:fab_expandDirection="left"
+        app:fab_size="mini"
+        android:id="@+id/crosstalk_floating"
+        android:layout_width="10dp"
+        android:layout_height="10dp">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            app:fab_title="@string/pinbi"
+            android:background="#29b6f6"
+            app:fab_size="mini"
+            app:fab_icon="@drawable/pinbi"
+            android:id="@+id/pinbi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            app:fab_title="@string/lianjie"
+            android:background="#29b6f6"
+            app:fab_icon="@drawable/lianjie"
+            app:fab_size="mini"
+            android:id="@+id/lianjie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/jubao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/dz_img"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="79dp"
+            android:layout_marginRight="79dp"
+            android:background="#29b6f6"
+            app:backgroundTint="#ff87ffeb"
+            app:fab_icon="@drawable/jubao"
+            app:fab_size="mini"
+            app:fab_title="@string/jubao"
+            app:pressedTranslationZ="12dp"
+            app:rippleColor="#33728dff" />
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+
+    <ImageView
+        android:id="@+id/dz_img"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@mipmap/ic_launcher"
+        />
+    <TextView
+        android:id="@+id/dz_name"
+        android:text="名字"
+        android:textSize="20sp"
+        android:layout_toRightOf="@id/dz_img"
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/dz_time"
+        android:text="时间"
+        android:textSize="18sp"
+        android:layout_toRightOf="@id/dz_img"
+        android:layout_below="@id/dz_name"
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/dz_content"
+        android:text="内容"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dz_img"
+        android:layout_marginTop="10dp"
+        />
+
+    <Button
+        android:id="@+id/guanzhu"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="80px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20px"
+        android:text="关注"
+        android:layout_below="@id/dz_content"
+        />
+
+</RelativeLayout>
