@@ -47,7 +47,7 @@ public class ReMenFragment extends BaseFragment implements ShipinView{
         shipinRemenAdapter.setOnItemClickListener(new ShipinRemenAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                Toast.makeText(getContext(),"点击了第"+position+"条目",Toast.LENGTH_SHORT).show();
+
                 String videoUrl = data.get(position).getVideoUrl();
 
                 Intent intent = new Intent(getActivity(), ShipinxiangqingActivity.class);
@@ -63,13 +63,17 @@ public class ReMenFragment extends BaseFragment implements ShipinView{
         ShipinBean o1 = (ShipinBean) o;
         data = o1.getData();
 
+        if (data!=null) {
 
 
-        shipinRemenAdapter.setData(data);
-        mXrv.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+            shipinRemenAdapter.setData(data);
+            mXrv.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
 
 
-       mXrv.setAdapter(shipinRemenAdapter);
+            mXrv.setAdapter(shipinRemenAdapter);
+        }else{
+            return;
+        }
 
     }
 

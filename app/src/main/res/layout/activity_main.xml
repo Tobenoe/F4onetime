@@ -1,18 +1,179 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+<<<<<<< HEAD
     tools:context="com.example.zs.onetime.activity.MainActivity">
 <include layout="@layout/titletab_layout"></include>
     <com.hjm.bottomtabbar.BottomTabBar
         android:id="@+id/bottom_tab_bar"
+=======
+    tools:context="com.example.zs.onetime.MainActivity">
+
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/my_drawerLayout"
+>>>>>>> 4585d8c32eb0a65d681c5526c7c4fbbf7792c3ad
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-    </com.hjm.bottomtabbar.BottomTabBar>
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <!--主布局-->
+            <include layout="@layout/titletab_layout"></include>
+
+            <com.hjm.bottomtabbar.BottomTabBar
+                android:id="@+id/bottom_tab_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </com.hjm.bottomtabbar.BottomTabBar>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:background="#fff"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2.5">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/drawerlayout_background"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+
+                    <com.facebook.drawee.view.SimpleDraweeView
+                        android:id="@+id/silde_touxiang"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="5dp"
+                        fresco:placeholderImage="@drawable/user_no_image"
+                        fresco:placeholderImageScaleType="fitCenter"
+                        fresco:roundAsCircle="true" />
+
+
+                    <TextView
+                        android:id="@+id/silde_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/silde_touxiang"
+                        android:text="name"
+                        android:layout_marginLeft="20dp"
+                        />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/sex"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/silde_qianming"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/silde_touxiang"
+                        android:text="编辑个性签名" />
+
+
+                </RelativeLayout>
+            </LinearLayout>
+
+
+            <ListView
+                android:id="@+id/silde_list"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="4">
+
+            </ListView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_margin="2dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/night" />
+
+                <TextView
+                    android:layout_margin="2dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="夜间模式" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="2"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+
+                    <ImageView
+                        android:id="@+id/wj"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="20dp"
+                        android:src="@mipmap/left_wenjian" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/wj"
+                        android:layout_marginLeft="20dp"
+                        android:text="我的文件" />
+
+
+                    <ImageView
+                        android:id="@+id/sz"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dp"
+                        android:src="@drawable/left_shezhi" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_below="@+id/sz"
+                        android:layout_marginRight="25dp"
+                        android:text="设置" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </android.support.v4.widget.DrawerLayout>
 
 
 </LinearLayout>

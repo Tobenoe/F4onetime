@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+
     android:background="#fff">
 
     <ImageView
@@ -11,24 +11,49 @@
     android:layout_height="30dp"
     android:background="@drawable/fanhui"
         android:layout_margin="10dp"/>
+
     <ImageView
         android:id="@+id/leftxin"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/left_xin"
-        android:layout_margin="10dp"/>
+        android:layout_alignTop="@+id/fanhui"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_toEndOf="@+id/fanhui"
+        android:layout_toRightOf="@+id/fanhui"
+        android:src="@drawable/left_xin" />
+
     <ImageView
         android:id="@+id/rawxin"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/raw_xin"
-        android:layout_margin="10dp"/>
+        android:layout_alignTop="@+id/leftxin"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/leftxin"
+        android:layout_toRightOf="@+id/leftxin"
+        android:src="@drawable/raw_xin" />
+
     <ImageView
         android:id="@+id/rawfenxiang"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:src="@drawable/raw_fenxiang"
-        android:layout_margin="10dp"/>
+        android:layout_alignTop="@+id/rawxin"
+        android:layout_marginLeft="14dp"
+        android:layout_marginStart="14dp"
+        android:layout_toEndOf="@+id/rawxin"
+        android:layout_toRightOf="@+id/rawxin"
+        android:src="@drawable/raw_fenxiang" />
 
+    <ImageView
+        android:id="@+id/touxiang"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/rawfenxiang"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:src="@drawable/touxiang" />
 
-</LinearLayout>
+</RelativeLayout>

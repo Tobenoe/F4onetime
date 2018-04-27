@@ -4,12 +4,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
     <com.youth.banner.Banner
 
         android:id="@+id/banner"
         android:layout_width="match_parent"
-        android:layout_height="80dp" />
+        android:layout_height="150dp"
+        />
 
     <com.jcodecraeer.xrecyclerview.XRecyclerView
         android:id="@+id/hot_recylerView"
@@ -23,4 +30,6 @@
 
     </com.jcodecraeer.xrecyclerview.XRecyclerView>
 
+</LinearLayout>
+    </ScrollView>
 </LinearLayout>
