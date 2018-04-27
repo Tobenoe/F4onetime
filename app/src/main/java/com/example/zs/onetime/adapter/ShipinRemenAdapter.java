@@ -80,6 +80,8 @@ public class ShipinRemenAdapter extends RecyclerView.Adapter<ShipinRemenAdapter.
 //        }else{
 //            Glide.with(context).load(cover).into(holder.img);
 //        }
+
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -1,6 +1,7 @@
 package com.example.zs.onetime.api;
 
 import com.example.zs.onetime.bean.BannerBen;
+import com.example.zs.onetime.bean.FujinBean;
 import com.example.zs.onetime.bean.HotBean;
 import com.example.zs.onetime.bean.ShipinBean;
 
@@ -28,4 +29,8 @@ public interface ApiService {
     Flowable<ShipinBean> getShipin(@Field("uid") String uid, @Field("source") String source, @Field("appVersion") String appVersion);
 
 
+    //getNearVideos?page=1&latitude=1&longitude=1&token=1&source=android&appVersion=1
+    @FormUrlEncoded
+    @POST("getNearVideos")
+    Flowable<FujinBean> getFujin(@Field("page") String page, @Field("latitude") String latitude, @Field("longitude") String longitude,@Field("token") String token,@Field("source") String source,@Field("appVersion") String appVersion);
 }
