@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import com.example.zs.onetime.R;
 import com.example.zs.onetime.base.BaseActivity;
+import com.example.zs.onetime.presenter.LoginP;
+import com.example.zs.onetime.view.LoginVinterface;
 
 public class LoginActivity extends BaseActivity implements View.OnClickListener {
 
@@ -42,6 +44,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     @Override
     protected void initData() {
 
+
+
     }
 
 
@@ -70,4 +74,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 break;
         }
     }
+
+
+
 }

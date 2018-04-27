@@ -12,8 +12,11 @@ import android.widget.Toast;
 
 import com.example.zs.onetime.R;
 import com.example.zs.onetime.base.BaseActivity;
+import com.example.zs.onetime.bean.RegiterBean;
+import com.example.zs.onetime.presenter.RegisterP;
+import com.example.zs.onetime.view.RegisterVinterface;
 
-public class ResgisterActivity extends BaseActivity implements View.OnClickListener {
+public class ResgisterActivity extends BaseActivity implements View.OnClickListener, RegisterVinterface {
 
 
     private ImageView mRegisterBack;
@@ -37,6 +40,7 @@ public class ResgisterActivity extends BaseActivity implements View.OnClickListe
      * 游客登录
      */
     private TextView mResgisterYk;
+    private RegisterP registerP;
 
     @Override
     protected int getLayout() {
@@ -60,11 +64,10 @@ public class ResgisterActivity extends BaseActivity implements View.OnClickListe
 
     @Override
     protected void initData() {
-
+        registerP = new RegisterP(this);
 
 
     }
-
 
 
     @Override
@@ -84,13 +87,43 @@ public class ResgisterActivity extends BaseActivity implements View.OnClickListe
 
                 break;
             case R.id.btn_resgister:
-                Toast.makeText(ResgisterActivity.this,"点击了注册",Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(ResgisterActivity.this, "点击了注册", Toast.LENGTH_SHORT).show();
+                String mobile = mRegisterName.getText().toString();
+                String password = mRegisterPass.getText().toString();
+                registerP.getRegister(mobile, password);
+                Log.i("TAG", mobile + "--" + password);
                 break;
             case R.id.resgister_yk:
+                Toast.makeText(ResgisterActivity.this, "点击了游客", Toast.LENGTH_SHORT).show();
 
-                Toast.makeText(ResgisterActivity.this,"点击了游客",Toast.LENGTH_SHORT).show();
                 break;
         }
+    }
+
+    //注册返回
+    @Override
+    public void OnRegister(Object o) {
+
+        RegiterBean regiterBean = (RegiterBean) o;
+        String msg = regiterBean.getMsg();
+        String code = regiterBean.getCode();
+
+        if (code.equals("0")) {
+
+            Toast.makeText(ResgisterActivity.this, msg, Toast.LENGTH_SHORT).show();
+            finish();
+        } else {
+
+            Toast.makeText(ResgisterActivity.this, msg, Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //注册解耦
+        registerP.onDestroy();
+
     }
 }

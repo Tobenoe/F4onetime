@@ -15,10 +15,11 @@ public class Api {
    
 //    //.版本更新接口
 //    public static final  String NEWVSN = ONTETIME+"getVersion";
-//    //登录接口
-//    public static final  String LOGIN = "https://www.zhaoapi.cn/user/login";
-//    //注册接口 https://www.zhaoapi.cn/quarter/register
-//    public static final  String REGISTER = ONTETIME+"register";
+  //登录接口
+   public static final  String LOGIN = "https://www.zhaoapi.cn/user/";
+
+//    注册接口 https://www.zhaoapi.cn/quarter/register
+    public static final  String REGISTER = ONTETIME;
 //
 //      //发布视频
 //      public static final String RELESE = ONTETIME+"publishVideo ";

@@ -18,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.zs.onetime.activity.LoginActivity;
+import com.example.zs.onetime.activity.SettingActivity;
 import com.example.zs.onetime.base.BaseActivity;
 import com.example.zs.onetime.bean.SildeBean;
 import com.example.zs.onetime.fragments.CrossdFreagment;
@@ -44,6 +45,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private ListView mSildeList;
     private List<SildeBean> list;
     private SimpleDraweeView mSildeTouxiang;
+    /**
+     * name
+     */
+    private TextView mSildeName;
+    private ImageView mWj;
+    private ImageView mSz;
 
     @Override
     protected int getLayout() {
@@ -63,6 +70,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mSildeList = (ListView) findViewById(R.id.silde_list);
         mSildeTouxiang = (SimpleDraweeView) findViewById(R.id.silde_touxiang);
         mSildeTouxiang.setOnClickListener(this);
+        mSildeName = (TextView) findViewById(R.id.silde_name);
+        mWj = (ImageView) findViewById(R.id.wj);
+        mWj.setOnClickListener(this);
+        mSz = (ImageView) findViewById(R.id.sz);
+        mSz.setOnClickListener(this);
     }
 
     @Override
@@ -117,7 +129,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 mMyDrawerLayout.openDrawer(Gravity.LEFT);
             }
         });
-
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        mSildeName.setText(name);
         List<SildeBean> list = new ArrayList<>();
         list.add(new SildeBean("我的关注", R.drawable.left_xin, R.mipmap.jiantou));
         list.add(new SildeBean("我的收藏", R.drawable.left_shoucang, R.mipmap.jiantou));
@@ -126,8 +140,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         SlideAdapter slideAdapter = new SlideAdapter(this, list);
         mSildeList.setAdapter(slideAdapter);
 
-    }
 
+    }
 
 
     @Override
@@ -142,8 +156,23 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
 
                 break;
+            case R.id.wj:
+
+
+
+
+                break;
+            case R.id.sz:
+
+                Intent intent1 = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(intent1);
+
+                break;
         }
     }
+
+
+
 
     class SlideAdapter extends BaseAdapter {
 
@@ -181,7 +210,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             silde_item_left.setImageResource(list.get(i).getLeftImg());
             silde_item_text.setText(list.get(i).getText());
             silde_item_right.setImageResource(list.get(i).getRight());
-
 
             return view;
 
