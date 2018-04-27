@@ -1,6 +1,7 @@
 package com.example.zs.onetime.fragments;
 
 import android.animation.ObjectAnimator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
@@ -12,7 +13,9 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.zs.onetime.R;
+import com.example.zs.onetime.activity.DzDetailActivity;
 import com.example.zs.onetime.adapter.DZAdapter;
+import com.example.zs.onetime.adapter.ShipinRemenAdapter;
 import com.example.zs.onetime.base.BaseFragment;
 import com.example.zs.onetime.bean.DZBean;
 import com.example.zs.onetime.moudel.DZModel;
@@ -76,12 +79,23 @@ public class CrossdFreagment extends BaseFragment implements IDZView {
     }
     //展示段子列表的方法
     @Override
-    public void showDZList(List<DZBean.DataBean> list) {
+    public void showDZList(final List<DZBean.DataBean> list) {
         this.list = list;
         Log.d("TAG", "showDZList: 数据---------" + list);
 
         //设置适配器
         DZAdapter dzAdapter = new DZAdapter(list, getActivity());
         mXrecyclerview.setAdapter(dzAdapter);
+
+        dzAdapter.setOnItemClickListener(new DZAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                //跳转到段子详情页面
+                Intent intent=new Intent(getActivity(), DzDetailActivity.class);
+                intent.putExtra("jid",list.get(position).getJid());
+                startActivity(intent);
+            }
+        });
+
     }
 }

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.zs.onetime.MainActivity">
+    tools:context="com.example.zs.onetime.activity.MainActivity">
 <include layout="@layout/titletab_layout"></include>
     <com.hjm.bottomtabbar.BottomTabBar
         android:id="@+id/bottom_tab_bar"

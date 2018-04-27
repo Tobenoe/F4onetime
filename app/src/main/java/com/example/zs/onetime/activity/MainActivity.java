@@ -1,4 +1,4 @@
-package com.example.zs.onetime;
+package com.example.zs.onetime.activity;
 
 import android.graphics.Color;
 import android.os.Bundle;
@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.example.zs.onetime.R;
 import com.example.zs.onetime.base.BaseActivity;
 import com.example.zs.onetime.fragments.CrossdFreagment;
 import com.example.zs.onetime.fragments.RecommendFreagment;

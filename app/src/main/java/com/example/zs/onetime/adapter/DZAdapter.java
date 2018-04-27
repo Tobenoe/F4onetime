@@ -49,7 +49,7 @@ public class DZAdapter extends RecyclerView.Adapter<DZAdapter.MyViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(final MyViewHolder holder, int position) {
+    public void onBindViewHolder(final MyViewHolder holder, final int position) {
         //賦值
         holder.dz_name.setText(list.get(position).getUser().getNickname()+"");
         holder.dz_time.setText(list.get(position).getCreateTime());
@@ -107,6 +107,17 @@ public class DZAdapter extends RecyclerView.Adapter<DZAdapter.MyViewHolder> {
             }
         });
 
+        //给整个条目布局添加点击事件
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                //条目的点击事件
+                int index = holder.getLayoutPosition();
+                onItemClickListener.onItemClick(view,index);
+
+            }
+        });
 
     }
 
@@ -146,5 +157,18 @@ public class DZAdapter extends RecyclerView.Adapter<DZAdapter.MyViewHolder> {
             guanzhu = itemView.findViewById(R.id.guanzhu);
 
         }
+    }
+
+    //条目点击监听
+    private OnItemClickListener onItemClickListener;
+    //条目点击事件
+    public interface OnItemClickListener{
+        void onItemClick(View view,int position);
+    }
+
+    //条目点击事件
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+
+        this.onItemClickListener = onItemClickListener;
     }
 }

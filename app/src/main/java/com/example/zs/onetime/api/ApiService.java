@@ -8,6 +8,8 @@ import java.util.Map;
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import retrofit2.http.FieldMap;
+
+import com.example.zs.onetime.bean.DZDetailBean;
 import com.example.zs.onetime.bean.FujinBean;
 import com.example.zs.onetime.bean.HotBean;
 import com.example.zs.onetime.bean.ShipinBean;
@@ -40,6 +42,11 @@ public interface ApiService {
     @POST("getJokes")
     Observable<DZBean> getDZList(@FieldMap Map<String,String> map);
 
+    //段子列表
+    //https://www.zhaoapi.cn/quarter/getJokeDetail?jid=2209&source=android&appVersion=101
+    @FormUrlEncoded
+    @POST("getJokeDetail")
+    Observable<DZDetailBean> getDetailList(@FieldMap Map<String,String> map);
 
     //getNearVideos?page=1&latitude=1&longitude=1&token=1&source=android&appVersion=1
     @FormUrlEncoded

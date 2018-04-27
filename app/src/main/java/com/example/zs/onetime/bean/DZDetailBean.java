@@ -17,9 +17,6 @@ public class DZDetailBean {
     private String code;
     private DataBean data;
 
-    public DZDetailBean() {
-    }
-
     public String getMsg() {
         return msg;
     }
