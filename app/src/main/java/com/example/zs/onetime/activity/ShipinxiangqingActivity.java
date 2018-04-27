@@ -20,6 +20,9 @@ public class ShipinxiangqingActivity extends BaseActivity implements View.OnClic
     private ImageView mLeftxin;
     private ImageView mRawxin;
     private ImageView mRawfenxiang;
+    private boolean ischeck = false;
+    private boolean isflag = false;
+    private ImageView mTouxiang;
 
     @Override
     protected int getLayout() {
@@ -39,6 +42,8 @@ public class ShipinxiangqingActivity extends BaseActivity implements View.OnClic
         mRawxin.setOnClickListener(this);
         mRawfenxiang = (ImageView) findViewById(R.id.rawfenxiang);
         mRawfenxiang.setOnClickListener(this);
+        mTouxiang = (ImageView) findViewById(R.id.touxiang);
+        mTouxiang.setOnClickListener(this);
     }
 
     @Override
@@ -63,11 +68,38 @@ public class ShipinxiangqingActivity extends BaseActivity implements View.OnClic
                 finish();
                 break;
             case R.id.leftxin:
+
+
+                if (ischeck == false) {
+                    mLeftxin.setImageResource(R.drawable.left_xin);
+
+                    ischeck = true;
+                } else {
+                    mLeftxin.setImageResource(R.drawable.raw_querenxin);
+
+                    ischeck = false;
+                }
+
                 break;
             case R.id.rawxin:
+                if (isflag == false) {
+                    mRawxin.setImageResource(R.drawable.raw_xin);
+                    isflag = true;
+                } else {
+                    mRawxin.setImageResource(R.drawable.raw_xinsui);
+                    isflag = false;
+                }
                 break;
             case R.id.rawfenxiang:
+
+                Toast.makeText(ShipinxiangqingActivity.this, "分享", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.touxiang:
+                Toast.makeText(ShipinxiangqingActivity.this, "头像", Toast.LENGTH_SHORT).show();
+
                 break;
         }
     }
+
+
 }
