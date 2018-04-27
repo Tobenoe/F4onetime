@@ -25,12 +25,12 @@
         <activity android:name=".DZDetailActivity" />
         <activity android:name=".activity.ShipinxiangqingActivity" />
         <activity android:name=".activity.LoginActivity" />
-<<<<<<< HEAD
+
         <activity android:name=".activity.YonghuzuopinActivity"></activity>
-=======
+
         <activity android:name=".activity.OtherLoginActivity" />
         <activity android:name=".activity.ResgisterActivity"></activity>
->>>>>>> fe567a4c22b1b934657ba45bb6b277714d59794a
+
     </application>
 
 </manifest>
