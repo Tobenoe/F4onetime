@@ -25,6 +25,7 @@ public class ShipinxiangqingActivity extends BaseActivity implements View.OnClic
     private boolean ischeck = false;
     private boolean isflag = false;
     private ImageView mTouxiang;
+    private int yhuid;
 
     @Override
     protected int getLayout() {
@@ -52,14 +53,18 @@ public class ShipinxiangqingActivity extends BaseActivity implements View.OnClic
     protected void initData() {
         Intent intent = getIntent();
         String urls = intent.getStringExtra("url");
+        yhuid = intent.getIntExtra("yhuid", 0);
+
 
         Glide.with(this)
                 .load(R.drawable.touxiang)
                 .bitmapTransform(new RoundedCornersTransformation(this,100,5))
                 .into(mTouxiang);
 
+
         mMvPlayer.setUp(urls, "沃尔特一------------");
         mMvPlayer.setThumbImageViewScalType(ImageView.ScaleType.FIT_XY);
+
 
 
     }
@@ -99,9 +104,13 @@ public class ShipinxiangqingActivity extends BaseActivity implements View.OnClic
             case R.id.rawfenxiang:
 
                 Toast.makeText(ShipinxiangqingActivity.this, "分享", Toast.LENGTH_SHORT).show();
+
                 break;
             case R.id.touxiang:
-                Toast.makeText(ShipinxiangqingActivity.this, "头像", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(ShipinxiangqingActivity.this, YonghuzuopinActivity.class);
+                intent.putExtra("yhuid",yhuid);
+                startActivity(intent);
 
                 break;
         }
