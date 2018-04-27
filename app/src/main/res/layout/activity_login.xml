@@ -1,9 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/raw_1499917357"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context="com.example.zs.onetime.activity.LoginActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <include layout="@layout/other_title_layout"></include>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/log_icon" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:gravity="center"
+
+        android:orientation="vertical">
+
+
+        <ImageButton
+            android:id="@+id/qq_login"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:background="@mipmap/qq1" />
+
+        <ImageButton
+            android:id="@+id/wx_login"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:background="@mipmap/weixin1"
+            android:layout_marginTop="10dp"
+            />
+
+        <TextView
+            android:id="@+id/login_other"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="选择其他方式登录"
+            android:textColor="#fff"
+            />
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
