@@ -78,9 +78,9 @@ public class RecommendFreagment extends BaseFragment {
         });
 
 
-
-
     }
+
+
 
 
 }

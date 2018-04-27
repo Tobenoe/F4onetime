@@ -75,7 +75,15 @@ public class HotBean {
         private String videoUrl;
         private int wid;
         private Object workDesc;
-        private List<?> comments;
+        private List<Comments> comments;
+
+        public List<Comments> getComments() {
+            return comments;
+        }
+
+        public void setComments(List<Comments> comments) {
+            this.comments = comments;
+        }
 
         public int getCommentNum() {
             return commentNum;
@@ -189,12 +197,104 @@ public class HotBean {
             this.workDesc = workDesc;
         }
 
-        public List<?> getComments() {
-            return comments;
-        }
 
-        public void setComments(List<?> comments) {
-            this.comments = comments;
+
+        public static class Comments{
+
+
+            /**
+             * cid : 347
+             * content : 好好！！
+             * createTime : 2018-04-26T21:29:55
+             * jid : null
+             * mvp : null
+             * nickname : 我是XXX
+             * praiseNum : 0
+             * uid : 1570
+             * wid : 430
+             */
+
+            private int cid;
+            private String content;
+            private String createTime;
+            private Object jid;
+            private Object mvp;
+            private String nickname;
+            private int praiseNum;
+            private int uid;
+            private int wid;
+
+            public int getCid() {
+                return cid;
+            }
+
+            public void setCid(int cid) {
+                this.cid = cid;
+            }
+
+            public String getContent() {
+                return content;
+            }
+
+            public void setContent(String content) {
+                this.content = content;
+            }
+
+            public String getCreateTime() {
+                return createTime;
+            }
+
+            public void setCreateTime(String createTime) {
+                this.createTime = createTime;
+            }
+
+            public Object getJid() {
+                return jid;
+            }
+
+            public void setJid(Object jid) {
+                this.jid = jid;
+            }
+
+            public Object getMvp() {
+                return mvp;
+            }
+
+            public void setMvp(Object mvp) {
+                this.mvp = mvp;
+            }
+
+            public String getNickname() {
+                return nickname;
+            }
+
+            public void setNickname(String nickname) {
+                this.nickname = nickname;
+            }
+
+            public int getPraiseNum() {
+                return praiseNum;
+            }
+
+            public void setPraiseNum(int praiseNum) {
+                this.praiseNum = praiseNum;
+            }
+
+            public int getUid() {
+                return uid;
+            }
+
+            public void setUid(int uid) {
+                this.uid = uid;
+            }
+
+            public int getWid() {
+                return wid;
+            }
+
+            public void setWid(int wid) {
+                this.wid = wid;
+            }
         }
 
         public static class UserBean {
