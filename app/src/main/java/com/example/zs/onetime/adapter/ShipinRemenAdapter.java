@@ -73,6 +73,7 @@ public class ShipinRemenAdapter extends RecyclerView.Adapter<ShipinRemenAdapter.
         Glide.with(context)
                 .load(data.get(position).getUser().getIcon())
                 .into(holder.img);
+
 //        String cover = data.get(position).getCover();
 //        String icon = data.get(position).getUser().getIcon();
 //        if (cover.equals("")||cover==null){

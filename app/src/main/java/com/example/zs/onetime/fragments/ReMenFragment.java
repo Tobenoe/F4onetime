@@ -49,9 +49,12 @@ public class ReMenFragment extends BaseFragment implements ShipinView{
             public void onItemClick(View view, int position) {
 
                 String videoUrl = data.get(position).getVideoUrl();
+                int uid = data.get(position).getUid();
+
 
                 Intent intent = new Intent(getActivity(), ShipinxiangqingActivity.class);
                 intent.putExtra("url",videoUrl);
+                intent.putExtra("yhuid",uid);
                 startActivity(intent);
 
             }
