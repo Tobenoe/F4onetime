@@ -74,8 +74,9 @@ public class RecommendFhot extends BaseFragment implements BannerVinterface, Get
 
         getHotP = new GetHotP(this);
         Bundle arguments = getArguments();
-        String type = arguments.getString("type1");
-        getHotP.getHot("0", type, "101");
+        //
+        // String type = arguments.getString("type1");
+        getHotP.getHot("0", "1", "101");
 
 
 

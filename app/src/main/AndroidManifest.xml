@@ -24,7 +24,9 @@
         </activity>
         <activity android:name=".DZDetailActivity" />
         <activity android:name=".activity.ShipinxiangqingActivity" />
-        <activity android:name=".activity.LoginActivity"></activity>
+        <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".activity.OtherLoginActivity" />
+        <activity android:name=".activity.ResgisterActivity"></activity>
     </application>
 
 </manifest>
