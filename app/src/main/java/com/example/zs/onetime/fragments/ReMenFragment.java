@@ -77,4 +77,7 @@ public class ReMenFragment extends BaseFragment implements ShipinView{
     public void onNo(String e) {
 
     }
+
+
+
 }
