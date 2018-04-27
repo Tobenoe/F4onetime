@@ -16,6 +16,8 @@ import com.hjm.bottomtabbar.BottomTabBar;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 public class MainActivity extends BaseActivity {
 
 

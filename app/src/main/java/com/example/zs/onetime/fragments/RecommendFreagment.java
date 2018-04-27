@@ -25,7 +25,9 @@ public class RecommendFreagment extends BaseFragment {
     private TabLayout mRecomTabs;
     private ViewPager mRecomViewPager;
     private String[] items = {"热门", "关注"};
-    private List<Fragment> fragments = new ArrayList<>();
+    private String[] type = {"1", "2"};
+  //  private List<Fragment> fragments = new ArrayList<>();
+    private List<RecommendFhot> fhotList = new ArrayList<>();
 
     @Override
     protected int getLayout() {
@@ -44,26 +46,29 @@ public class RecommendFreagment extends BaseFragment {
     @Override
     protected void initData() {
 
-        fragments.add(new RecommendFhot());
-        fragments.add(new RecommendGz());
+
 
         for (int i = 0; i < items.length; i++) {
-
+            RecommendFhot recommendFhot = new RecommendFhot();
+            Bundle bundle = new Bundle();
+            bundle.putString("type",type[i]);
+            recommendFhot.setArguments(bundle);
+            fhotList.add(recommendFhot);
             mRecomTabs.addTab(mRecomTabs.newTab().setText(items[i]));
 
         }
+
+
         mRecomTabs.setupWithViewPager(mRecomViewPager);
         mRecomViewPager.setAdapter(new FragmentPagerAdapter(getActivity().getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
-                return fragments.get(position);
+                return fhotList.get(position);
             }
-
             @Override
             public int getCount() {
-                return fragments!= null ? fragments.size() : 0;
+                return fhotList!= null ? fhotList.size() : 0;
             }
-
             @Override
             public CharSequence getPageTitle(int position) {
                 return items[position];
