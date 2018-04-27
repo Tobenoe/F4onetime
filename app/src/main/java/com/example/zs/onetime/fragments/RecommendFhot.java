@@ -46,9 +46,9 @@ public class RecommendFhot extends BaseFragment implements BannerVinterface, Get
     private String types = "";
     private HotAdapter hotAdapter;
 
-
     @Override
     protected int getLayout() {
+
         return R.layout.hot_layout;
     }
 
@@ -71,10 +71,12 @@ public class RecommendFhot extends BaseFragment implements BannerVinterface, Get
         bannerP = new BannerP(this);
         bannerP.getBanner();
         hotAdapter = new HotAdapter(getActivity());
+
         getHotP = new GetHotP(this);
         Bundle arguments = getArguments();
         String type = arguments.getString("type1");
-        getHotP.getHot("0", "1", "101");
+        getHotP.getHot("0", type, "101");
+
 
 
     }
