@@ -29,13 +29,12 @@
         <activity android:name=".activity.YonghuzuopinActivity"></activity>
 
         <activity android:name=".activity.OtherLoginActivity" />
-<<<<<<< HEAD
+
         <activity android:name=".activity.ResgisterActivity" />
         <activity android:name=".activity.SettingActivity"></activity>
-=======
-        <activity android:name=".activity.ResgisterActivity"></activity>
 
->>>>>>> 0976058c02153fd2038fb107ce67c308610721b3
+
+
     </application>
 
 </manifest>

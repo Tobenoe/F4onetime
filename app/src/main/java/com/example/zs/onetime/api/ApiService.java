@@ -49,7 +49,7 @@ public interface ApiService {
     @POST("getNearVideos")
     Flowable<FujinBean> getFujin(@Field("page") String page, @Field("latitude") String latitude, @Field("longitude") String longitude,@Field("token") String token,@Field("source") String source,@Field("appVersion") String appVersion);
 
-<<<<<<< HEAD
+
     //注册
       @FormUrlEncoded
       @POST("register")
@@ -59,7 +59,7 @@ public interface ApiService {
       @FormUrlEncoded
       @POST("login")
       Flowable<LoginBean> getLogin(@Field("mobile") String mobile, @Field("password") String password);
-=======
+
  //https://www.zhaoapi.cn/quarter/getUserVideos?uid=14366&source=android&appVersion=1
        @FormUrlEncoded
        @POST("getUserVideos")
@@ -67,6 +67,5 @@ public interface ApiService {
 
 
 
->>>>>>> 0976058c02153fd2038fb107ce67c308610721b3
 
 }
