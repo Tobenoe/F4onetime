@@ -69,11 +69,6 @@ public class DZAdapter extends RecyclerView.Adapter<DZAdapter.MyViewHolder> {
 
         }
 
-
-
-
-
-
         //关注的点击事件
         holder.guanzhu.setOnClickListener(new View.OnClickListener() {
             @Override

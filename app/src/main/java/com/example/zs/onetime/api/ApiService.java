@@ -1,7 +1,6 @@
 package com.example.zs.onetime.api;
 
 import com.example.zs.onetime.bean.BannerBen;
-<<<<<<< HEAD
 import com.example.zs.onetime.bean.DZBean;
 
 import java.util.Map;
@@ -9,14 +8,12 @@ import java.util.Map;
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import retrofit2.http.FieldMap;
-=======
 import com.example.zs.onetime.bean.FujinBean;
 import com.example.zs.onetime.bean.HotBean;
 import com.example.zs.onetime.bean.ShipinBean;
 
 import io.reactivex.Flowable;
 import retrofit2.http.Field;
->>>>>>> 691ac663a5e8c5d1b82d2e6c4b27a399333cb0ec
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 import retrofit2.http.Query;

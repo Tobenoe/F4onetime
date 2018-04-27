@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.zs.onetime">
-<<<<<<< HEAD
+
 
     <uses-permission android:name="android.permission.INTERNET" />
-=======
+
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
->>>>>>> 691ac663a5e8c5d1b82d2e6c4b27a399333cb0ec
+
 
     <application
         android:name=".app.MyApp"
@@ -26,11 +26,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
+
         <activity android:name=".DZDetailActivity"></activity>
-=======
+
         <activity android:name=".activity.ShipinxiangqingActivity"/>
->>>>>>> 691ac663a5e8c5d1b82d2e6c4b27a399333cb0ec
+
     </application>
 
 </manifest>
