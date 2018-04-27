@@ -6,10 +6,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.zs.onetime.R;
 import com.example.zs.onetime.base.BaseActivity;
 
 import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
+import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 
 public class ShipinxiangqingActivity extends BaseActivity implements View.OnClickListener {
@@ -51,6 +53,10 @@ public class ShipinxiangqingActivity extends BaseActivity implements View.OnClic
         Intent intent = getIntent();
         String urls = intent.getStringExtra("url");
 
+        Glide.with(this)
+                .load(R.drawable.touxiang)
+                .bitmapTransform(new RoundedCornersTransformation(this,100,5))
+                .into(mTouxiang);
 
         mMvPlayer.setUp(urls, "沃尔特一------------");
         mMvPlayer.setThumbImageViewScalType(ImageView.ScaleType.FIT_XY);
