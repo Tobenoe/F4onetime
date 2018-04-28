@@ -11,6 +11,7 @@ import com.example.zs.onetime.bean.RegiterBean;
 import com.example.zs.onetime.presenter.BannerPinterface;
 import com.example.zs.onetime.presenter.GetHotPinterface;
 import com.example.zs.onetime.presenter.LoginPinterface;
+import com.example.zs.onetime.presenter.PresmanPinterface;
 import com.example.zs.onetime.presenter.RegisterPinterface;
 import com.example.zs.onetime.utils.RetrofitUtils;
 
@@ -125,6 +126,35 @@ public class GetDataM {
             public void onNext(LoginBean loginBean) {
 
                 loginPinterface.OnLogin(loginBean);
+
+            }
+
+            @Override
+            public void onError(Throwable t) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
+
+
+    }
+
+
+    public void getPreman(String uid, String toyken, final PresmanPinterface presmanPinterface){
+
+        ApiService apiService = RetrofitUtils.getInData().getRetrofit(Api.LOGIN, ApiService.class);
+        Flowable<LoginBean> flowable = apiService.getPresman(uid,toyken);
+        flowable.subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread()).subscribeWith(new DefaultSubscriber<LoginBean>() {
+            @Override
+            public void onNext(LoginBean loginBean) {
+
+                presmanPinterface.OnPresman(loginBean);
+
 
             }
 

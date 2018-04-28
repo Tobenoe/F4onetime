@@ -8,6 +8,7 @@ import java.util.Map;
 import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import retrofit2.http.FieldMap;
+
 import com.example.zs.onetime.bean.FujinBean;
 import com.example.zs.onetime.bean.HotBean;
 import com.example.zs.onetime.bean.LoginBean;
@@ -30,9 +31,10 @@ public interface ApiService {
 
     @POST("getAd")
     Flowable<BannerBen> getBeanner();
-   //获取推荐列表
+
+    //获取推荐列表
     @POST("getVideos")
-    Flowable<HotBean> getHot(@Query("uid") String uid ,@Query("type")String type,@Query("source") String android,@Query("appVersion") String version);
+    Flowable<HotBean> getHot(@Query("uid") String uid, @Query("type") String type, @Query("source") String android, @Query("appVersion") String version);
 
     @FormUrlEncoded
     @POST("getVideos")
@@ -41,31 +43,34 @@ public interface ApiService {
     //段子列表
     @FormUrlEncoded
     @POST("getJokes")
-    Observable<DZBean> getDZList(@FieldMap Map<String,String> map);
+    Observable<DZBean> getDZList(@FieldMap Map<String, String> map);
 
 
     //getNearVideos?page=1&latitude=1&longitude=1&token=1&source=android&appVersion=1
     @FormUrlEncoded
     @POST("getNearVideos")
-    Flowable<FujinBean> getFujin(@Field("page") String page, @Field("latitude") String latitude, @Field("longitude") String longitude,@Field("token") String token,@Field("source") String source,@Field("appVersion") String appVersion);
+    Flowable<FujinBean> getFujin(@Field("page") String page, @Field("latitude") String latitude, @Field("longitude") String longitude, @Field("token") String token, @Field("source") String source, @Field("appVersion") String appVersion);
 
 
     //注册
-      @FormUrlEncoded
-      @POST("register")
-      Flowable<RegiterBean> getRegister(@Field("mobile") String mobile,@Field("password") String password);
+    @FormUrlEncoded
+    @POST("register")
+    Flowable<RegiterBean> getRegister(@Field("mobile") String mobile, @Field("password") String password);
 
-      //登录
-      @FormUrlEncoded
-      @POST("login")
-      Flowable<LoginBean> getLogin(@Field("mobile") String mobile, @Field("password") String password);
+    //登录
+    @FormUrlEncoded
+    @POST("login")
+    Flowable<LoginBean> getLogin(@Field("mobile") String mobile, @Field("password") String password);
 
- //https://www.zhaoapi.cn/quarter/getUserVideos?uid=14366&source=android&appVersion=1
-       @FormUrlEncoded
-       @POST("getUserVideos")
-       Flowable<YonghuBean> getYonghu(@Field("uid") String uid,@Field("source") String source,@Field("appVersion") String appVersion);
+    //https://www.zhaoapi.cn/quarter/getUserVideos?uid=14366&source=android&appVersion=1
+    @FormUrlEncoded
+    @POST("getUserVideos")
+    Flowable<YonghuBean> getYonghu(@Field("uid") String uid, @Field("source") String source, @Field("appVersion") String appVersion);
 
-
+    //获取个人信息
+    @FormUrlEncoded
+    @POST("getUserInfo")
+    Flowable<LoginBean> getPresman(@Field("uid") String uid, @Field("token") String token);
 
 
 }

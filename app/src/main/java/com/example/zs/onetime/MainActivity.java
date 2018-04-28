@@ -1,8 +1,11 @@
 package com.example.zs.onetime;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.DrawerLayout;
@@ -20,10 +23,13 @@ import android.widget.Toast;
 import com.example.zs.onetime.activity.LoginActivity;
 import com.example.zs.onetime.activity.SettingActivity;
 import com.example.zs.onetime.base.BaseActivity;
+import com.example.zs.onetime.bean.LoginBean;
 import com.example.zs.onetime.bean.SildeBean;
 import com.example.zs.onetime.fragments.CrossdFreagment;
 import com.example.zs.onetime.fragments.RecommendFreagment;
 import com.example.zs.onetime.fragments.VideoFreagment;
+import com.example.zs.onetime.presenter.PresmanP;
+import com.example.zs.onetime.view.PresmanVinterface;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.hjm.bottomtabbar.BottomTabBar;
 
@@ -31,7 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends BaseActivity implements View.OnClickListener {
+public class MainActivity extends BaseActivity implements View.OnClickListener, PresmanVinterface {
 
 
     private List<Fragment> fragmentList;
@@ -51,6 +57,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private TextView mSildeName;
     private ImageView mWj;
     private ImageView mSz;
+    private PresmanP presmanP;
+    private SharedPreferences sharedPreferences;
+    private String uid;
 
     @Override
     protected int getLayout() {
@@ -61,7 +70,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void initView() {
-
+      //存储uid
+        sharedPreferences = getSharedPreferences("userdata", Activity.MODE_PRIVATE);
 
         mBottomTabBar = (BottomTabBar) findViewById(R.id.bottom_tab_bar);
         mPlaceHolderImageDraweeView = (SimpleDraweeView) findViewById(R.id.placeHolderImageDraweeView);
@@ -129,9 +139,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 mMyDrawerLayout.openDrawer(Gravity.LEFT);
             }
         });
-        Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        mSildeName.setText(name);
+
+
         List<SildeBean> list = new ArrayList<>();
         list.add(new SildeBean("我的关注", R.drawable.left_xin, R.mipmap.jiantou));
         list.add(new SildeBean("我的收藏", R.drawable.left_shoucang, R.mipmap.jiantou));
@@ -139,6 +148,21 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         list.add(new SildeBean("消息通知", R.mipmap.left_xiaoxi, R.mipmap.jiantou));
         SlideAdapter slideAdapter = new SlideAdapter(this, list);
         mSildeList.setAdapter(slideAdapter);
+        presmanP = new PresmanP(this);
+        uid = sharedPreferences.getString("uid", "0");
+        String token = sharedPreferences.getString("token", "0");
+        Log.i("TAG","uid"+ uid);
+        if(!uid.equals("0")){
+
+            presmanP.getPresman(uid,token);
+
+        }else{
+
+            Toast.makeText(MainActivity.this, "暂未登陆", Toast.LENGTH_SHORT).show();
+
+
+        }
+
 
 
     }
@@ -159,8 +183,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             case R.id.wj:
 
 
-
-
                 break;
             case R.id.sz:
 
@@ -171,7 +193,32 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         }
     }
 
+    //获取个人信息
+    @Override
+    public void OnPresman(Object o) {
 
+        LoginBean loginBean = (LoginBean) o;
+        String msg = loginBean.getMsg();
+        if(!uid.equals("0")){
+
+            Log.i("TAG", msg);
+            //用户名
+            String username = loginBean.getData().getUsername();
+            mSildeName.setText(username);
+            //用户头像
+            Uri uri = Uri.parse("https://img-blog.csdn.net/20141210011257140?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvTHVvc2hlbmd5YW5n/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast");
+            mPlaceHolderImageDraweeView.setImageURI(uri);
+            mSildeTouxiang.setImageURI(uri);
+
+        }else{
+
+            mSildeName.setText("暂未登陆");
+
+        }
+
+
+
+    }
 
 
     class SlideAdapter extends BaseAdapter {
@@ -216,5 +263,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         }
     }
+
 
 }

@@ -46,6 +46,7 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
                 break;
             case R.id.tuichu:
                 edit.clear();
+                edit.commit();
                 Intent intent = new Intent(SettingActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();

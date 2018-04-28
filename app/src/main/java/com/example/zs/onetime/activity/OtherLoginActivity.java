@@ -130,7 +130,7 @@ public class OtherLoginActivity extends BaseActivity implements View.OnClickList
 
             editor.putString("uid", loginBean.getData().getUid() + "");
             editor.putString("token", loginBean.getData().getToken());
-
+            editor.commit();
             Intent intent = new Intent(OtherLoginActivity.this, MainActivity.class);
             intent.putExtra("name",loginBean.getData().getUsername());
             startActivity(intent);

@@ -29,7 +29,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
 /**
  * Created by work on 2018/4/25.
  * 推荐正式版
@@ -79,7 +78,6 @@ public class RecommendFhot extends BaseFragment implements BannerVinterface, Get
         getHotP.getHot("0", "1", "101");
 
 
-
     }
 
     //推荐数据
@@ -91,9 +89,12 @@ public class RecommendFhot extends BaseFragment implements BannerVinterface, Get
         String msg = hotBean.getMsg();
         String createTime = data.get(0).getCreateTime();
         Log.i("TAG", createTime);
+        if (!data.equals("") || data != null) {
 
-        hotAdapter.setData(data);
-        mHotRecylerView.setAdapter(hotAdapter);
+            hotAdapter.setData(data);
+            mHotRecylerView.setAdapter(hotAdapter);
+        }
+
 
 
     }
