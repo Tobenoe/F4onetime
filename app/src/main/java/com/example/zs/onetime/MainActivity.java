@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.zs.onetime.activity.FabuActivity;
 import com.example.zs.onetime.activity.LoginActivity;
+import com.example.zs.onetime.activity.SettingActivity;
 import com.example.zs.onetime.base.BaseActivity;
 import com.example.zs.onetime.bean.SildeBean;
 import com.example.zs.onetime.fragments.CrossdFreagment;
@@ -45,7 +46,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private ListView mSildeList;
     private List<SildeBean> list;
     private SimpleDraweeView mSildeTouxiang;
+<<<<<<< HEAD
     private SimpleDraweeView mFabu;
+=======
+    /**
+     * name
+     */
+    private TextView mSildeName;
+>>>>>>> b4a85800e05db7a24349d50148d20b7049fdbeef
     private ImageView mWj;
     private ImageView mSz;
 
@@ -67,11 +75,19 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mSildeList = (ListView) findViewById(R.id.silde_list);
         mSildeTouxiang = (SimpleDraweeView) findViewById(R.id.silde_touxiang);
         mSildeTouxiang.setOnClickListener(this);
+<<<<<<< HEAD
         mFabu = (SimpleDraweeView) findViewById(R.id.fabu);
         mFabu.setOnClickListener(this);
         mWj = (ImageView) findViewById(R.id.wj);
         mSz = (ImageView) findViewById(R.id.sz);
         mMyDrawerLayout.setOnClickListener(this);
+=======
+        mSildeName = (TextView) findViewById(R.id.silde_name);
+        mWj = (ImageView) findViewById(R.id.wj);
+        mWj.setOnClickListener(this);
+        mSz = (ImageView) findViewById(R.id.sz);
+        mSz.setOnClickListener(this);
+>>>>>>> b4a85800e05db7a24349d50148d20b7049fdbeef
     }
 
     @Override
@@ -126,7 +142,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                 mMyDrawerLayout.openDrawer(Gravity.LEFT);
             }
         });
-
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        mSildeName.setText(name);
         List<SildeBean> list = new ArrayList<>();
         list.add(new SildeBean("我的关注", R.drawable.left_xin, R.mipmap.jiantou));
         list.add(new SildeBean("我的收藏", R.drawable.left_shoucang, R.mipmap.jiantou));
@@ -135,8 +153,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         SlideAdapter slideAdapter = new SlideAdapter(this, list);
         mSildeList.setAdapter(slideAdapter);
 
-    }
 
+    }
 
     @Override
     public void onClick(View v) {
@@ -150,18 +168,36 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
 
                 break;
+<<<<<<< HEAD
             case R.id.fabu:
                 Intent intent1 = new Intent(this, FabuActivity.class);
                 startActivity(intent1);
 
                 break;
             case R.id.my_drawerLayout:
+=======
+            case R.id.wj:
+
+
+
+
+                break;
+            case R.id.sz:
+
+                Intent intent1 = new Intent(MainActivity.this, SettingActivity.class);
+                startActivity(intent1);
+
+>>>>>>> b4a85800e05db7a24349d50148d20b7049fdbeef
                 break;
         }
     }
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b4a85800e05db7a24349d50148d20b7049fdbeef
     class SlideAdapter extends BaseAdapter {
 
         private Context context;
@@ -198,7 +234,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             silde_item_left.setImageResource(list.get(i).getLeftImg());
             silde_item_text.setText(list.get(i).getText());
             silde_item_right.setImageResource(list.get(i).getRight());
-
 
             return view;
 

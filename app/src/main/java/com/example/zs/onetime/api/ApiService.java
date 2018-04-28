@@ -10,6 +10,8 @@ import io.reactivex.Observable;
 import retrofit2.http.FieldMap;
 import com.example.zs.onetime.bean.FujinBean;
 import com.example.zs.onetime.bean.HotBean;
+import com.example.zs.onetime.bean.LoginBean;
+import com.example.zs.onetime.bean.RegiterBean;
 import com.example.zs.onetime.bean.ShipinBean;
 import com.example.zs.onetime.bean.YonghuBean;
 
@@ -46,6 +48,17 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("getNearVideos")
     Flowable<FujinBean> getFujin(@Field("page") String page, @Field("latitude") String latitude, @Field("longitude") String longitude,@Field("token") String token,@Field("source") String source,@Field("appVersion") String appVersion);
+
+
+    //注册
+      @FormUrlEncoded
+      @POST("register")
+      Flowable<RegiterBean> getRegister(@Field("mobile") String mobile,@Field("password") String password);
+
+      //登录
+      @FormUrlEncoded
+      @POST("login")
+      Flowable<LoginBean> getLogin(@Field("mobile") String mobile, @Field("password") String password);
 
  //https://www.zhaoapi.cn/quarter/getUserVideos?uid=14366&source=android&appVersion=1
        @FormUrlEncoded

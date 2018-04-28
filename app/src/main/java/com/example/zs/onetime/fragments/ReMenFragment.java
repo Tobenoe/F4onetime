@@ -71,8 +71,7 @@ public class ReMenFragment extends BaseFragment implements ShipinView{
 
             shipinRemenAdapter.setData(data);
             mXrv.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
-
-
+            
             mXrv.setAdapter(shipinRemenAdapter);
         }else{
             return;
