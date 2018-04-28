@@ -12,7 +12,9 @@ import retrofit2.http.FieldMap;
 import com.example.zs.onetime.bean.DZDetailBean;
 import com.example.zs.onetime.bean.FujinBean;
 import com.example.zs.onetime.bean.HotBean;
+import com.example.zs.onetime.bean.LoginBean;
 import com.example.zs.onetime.bean.PinlunBean;
+import com.example.zs.onetime.bean.RegiterBean;
 import com.example.zs.onetime.bean.ShipinBean;
 
 import io.reactivex.Flowable;
@@ -54,7 +56,15 @@ public interface ApiService {
     @POST("commentJoke")
     Observable<PinlunBean> getPinlun(@FieldMap Map<String,String> map);
 
+ //注册
+ @FormUrlEncoded
+ @POST("register")
+ Flowable<RegiterBean> getRegister(@Field("mobile") String mobile, @Field("password") String password);
 
+ //登录
+ @FormUrlEncoded
+ @POST("login")
+ Flowable<LoginBean> getLogin(@Field("mobile") String mobile, @Field("password") String password);
 
 
     //getNearVideos?page=1&latitude=1&longitude=1&token=1&source=android&appVersion=1
