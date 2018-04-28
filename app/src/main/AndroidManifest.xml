@@ -27,19 +27,12 @@
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.YonghuzuopinActivity" />
         <activity android:name=".activity.OtherLoginActivity" />
-
         <activity android:name=".activity.ResgisterActivity" />
         <activity android:name=".activity.FabuActivity" />
         <activity android:name=".activity.FabushipinActivity" />
-        <activity android:name=".activity.FabuduanziActivity"></activity>
-
-
-
-        <activity android:name=".activity.SettingActivity"></activity>
-
-
-
-
+        <activity android:name=".activity.FabuduanziActivity" />
+        <activity android:name=".activity.SettingActivity" />
+        <activity android:name=".activity.IssuevideoActivity"></activity>
     </application>
 
 </manifest>

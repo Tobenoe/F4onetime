@@ -20,6 +20,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.zs.onetime.activity.IssuevideoActivity;
 import com.example.zs.onetime.activity.LoginActivity;
 import com.example.zs.onetime.activity.SettingActivity;
 import com.example.zs.onetime.base.BaseActivity;
@@ -60,6 +61,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
     private PresmanP presmanP;
     private SharedPreferences sharedPreferences;
     private String uid;
+    private SimpleDraweeView mFabu;
 
     @Override
     protected int getLayout() {
@@ -70,7 +72,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     @Override
     protected void initView() {
-      //存储uid
+        //存储uid
         sharedPreferences = getSharedPreferences("userdata", Activity.MODE_PRIVATE);
 
         mBottomTabBar = (BottomTabBar) findViewById(R.id.bottom_tab_bar);
@@ -85,10 +87,37 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         mWj.setOnClickListener(this);
         mSz = (ImageView) findViewById(R.id.sz);
         mSz.setOnClickListener(this);
+        mPlaceHolderImageDraweeView.setOnClickListener(this);
+        mFabu = (SimpleDraweeView) findViewById(R.id.fabu);
+        mFabu.setOnClickListener(this);
     }
 
     @Override
     protected void initData() {
+
+
+        setmain();
+
+        setsilde();
+        presmanP = new PresmanP(this);
+        uid = sharedPreferences.getString("uid", "0");
+        String token = sharedPreferences.getString("token", "0");
+        Log.i("TAG", "uid" + uid);
+        if (!uid.equals("0")) {
+
+            presmanP.getPresman(uid, token);
+
+        } else {
+
+            Toast.makeText(MainActivity.this, "暂未登陆", Toast.LENGTH_SHORT).show();
+
+
+        }
+
+
+    }
+
+    private void setmain() {
 
 
         fragmentList = new ArrayList<>();
@@ -131,15 +160,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                     }
                 });
 
-        mPlaceHolderImageDraweeView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                Toast.makeText(MainActivity.this, "点击了头像", Toast.LENGTH_SHORT).show();
-                mMyDrawerLayout.openDrawer(Gravity.LEFT);
-            }
-        });
+    }
 
+    private void setsilde() {
 
         List<SildeBean> list = new ArrayList<>();
         list.add(new SildeBean("我的关注", R.drawable.left_xin, R.mipmap.jiantou));
@@ -148,21 +172,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
         list.add(new SildeBean("消息通知", R.mipmap.left_xiaoxi, R.mipmap.jiantou));
         SlideAdapter slideAdapter = new SlideAdapter(this, list);
         mSildeList.setAdapter(slideAdapter);
-        presmanP = new PresmanP(this);
-        uid = sharedPreferences.getString("uid", "0");
-        String token = sharedPreferences.getString("token", "0");
-        Log.i("TAG","uid"+ uid);
-        if(!uid.equals("0")){
-
-            presmanP.getPresman(uid,token);
-
-        }else{
-
-            Toast.makeText(MainActivity.this, "暂未登陆", Toast.LENGTH_SHORT).show();
-
-
-        }
-
 
 
     }
@@ -190,6 +199,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
                 startActivity(intent1);
 
                 break;
+            case R.id.placeHolderImageDraweeView:
+
+                mMyDrawerLayout.openDrawer(Gravity.LEFT);
+                break;
+            case R.id.fabu:
+
+
+                Toast.makeText(MainActivity.this,"点击了发布",Toast.LENGTH_SHORT).show();
+
+                Intent intent2 = new Intent(MainActivity.this, IssuevideoActivity.class);
+                startActivity(intent2);
+                break;
         }
     }
 
@@ -199,7 +220,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
         LoginBean loginBean = (LoginBean) o;
         String msg = loginBean.getMsg();
-        if(!uid.equals("0")){
+        if (!uid.equals("0")) {
 
             Log.i("TAG", msg);
             //用户名
@@ -210,15 +231,15 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             mPlaceHolderImageDraweeView.setImageURI(uri);
             mSildeTouxiang.setImageURI(uri);
 
-        }else{
+        } else {
 
             mSildeName.setText("暂未登陆");
 
         }
 
 
-
     }
+
 
 
     class SlideAdapter extends BaseAdapter {
