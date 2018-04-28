@@ -15,7 +15,7 @@ public interface IDZDetailPresenter {
     void showDeatilToView(DZDetailModel dzDetailModel, IDetailView iDetailView);
 
     //获取段子详情的方法
-    void getDZDetailListData(List<DZDetailBean.DataBean> list);
+    void getDZDetailListData(Object o);
 }
 
 

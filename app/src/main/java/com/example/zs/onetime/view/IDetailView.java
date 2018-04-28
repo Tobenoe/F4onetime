@@ -11,5 +11,5 @@ import java.util.List;
 public interface IDetailView {
 
     //展示段子详情
-    void showDzDetailData(List<DZDetailBean.DataBean> list);
+    void showDzDetailData(Object o);
 }

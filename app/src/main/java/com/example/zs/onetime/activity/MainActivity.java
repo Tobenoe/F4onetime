@@ -17,11 +17,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-<<<<<<< HEAD:app/src/main/java/com/example/zs/onetime/activity/MainActivity.java
 import com.example.zs.onetime.R;
-=======
 import com.example.zs.onetime.activity.LoginActivity;
->>>>>>> 4585d8c32eb0a65d681c5526c7c4fbbf7792c3ad:app/src/main/java/com/example/zs/onetime/MainActivity.java
+
 import com.example.zs.onetime.base.BaseActivity;
 import com.example.zs.onetime.bean.SildeBean;
 import com.example.zs.onetime.fragments.CrossdFreagment;

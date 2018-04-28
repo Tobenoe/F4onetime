@@ -46,7 +46,6 @@ public class DZModel implements IDZModel {
                     public void onNext(DZBean value) {
 //                        //调用P层获取数据的方法
                        idzPresenter.getDZDataList(value.getData());
-                        Log.e("AAA",value.getData().size()+"==111");
                     }
 
                     @Override

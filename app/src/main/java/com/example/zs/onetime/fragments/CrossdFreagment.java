@@ -92,7 +92,7 @@ public class CrossdFreagment extends BaseFragment implements IDZView {
             public void onItemClick(View view, int position) {
                 //跳转到段子详情页面
                 Intent intent=new Intent(getActivity(), DzDetailActivity.class);
-                intent.putExtra("jid",list.get(position).getJid());
+                intent.putExtra("jid",list.get(0).getJid());
                 startActivity(intent);
             }
         });

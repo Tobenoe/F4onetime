@@ -19,7 +19,7 @@
         <activity android:name=".activity.MainActivity">
 
 
-        <activity android:name=".MainActivity">
+
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,8 +32,7 @@
         <activity android:name=".activity.DzDetailActivity"/>
 
 
-        <activity android:name=".activity.DzDetailActivity"/>
-        <activity android:name=".activity.ShipinxiangqingActivity" />
+        
         <activity android:name=".activity.LoginActivity"></activity>
     </application>
 

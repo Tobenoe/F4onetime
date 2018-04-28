@@ -6,17 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-<<<<<<< HEAD
-    tools:context="com.example.zs.onetime.activity.MainActivity">
-<include layout="@layout/titletab_layout"></include>
-    <com.hjm.bottomtabbar.BottomTabBar
-        android:id="@+id/bottom_tab_bar"
-=======
     tools:context="com.example.zs.onetime.MainActivity">
 
     <android.support.v4.widget.DrawerLayout
         android:id="@+id/my_drawerLayout"
->>>>>>> 4585d8c32eb0a65d681c5526c7c4fbbf7792c3ad
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

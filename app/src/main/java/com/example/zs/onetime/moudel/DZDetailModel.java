@@ -41,7 +41,7 @@ public class DZDetailModel implements IDZDetailModel {
                     public void onNext(DZDetailBean value) {
                         Log.d("TAG", "onNext: "+value.getMsg());
                         //调用p层获取详情的方法
-                        idzDetailPresenter.getDZDetailListData((List<DZDetailBean.DataBean>) value.getData());
+                        idzDetailPresenter.getDZDetailListData(value);
                     }
 
                     @Override
