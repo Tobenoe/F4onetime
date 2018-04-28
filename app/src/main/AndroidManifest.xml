@@ -32,7 +32,8 @@
         <activity android:name=".activity.FabushipinActivity" />
         <activity android:name=".activity.FabuduanziActivity" />
         <activity android:name=".activity.SettingActivity" />
-        <activity android:name=".activity.IssuevideoActivity"></activity>
+        <activity android:name=".activity.IssuevideoActivity" />
+        <activity android:name=".activity.ShowVideoActivity"></activity>
     </application>
 
 </manifest>

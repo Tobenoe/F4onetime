@@ -1,9 +1,14 @@
 package com.example.zs.onetime.base;
 
+import android.Manifest;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.Toast;
 
 import com.example.zs.onetime.R;
+import com.zhy.m.permission.MPermissions;
+import com.zhy.m.permission.PermissionDenied;
+import com.zhy.m.permission.PermissionGrant;
 
 /**
  * Created by work on 2018/4/25.
@@ -14,6 +19,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(getLayout());
 
         initView();
@@ -27,4 +33,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected abstract void initView();
 
     protected abstract void initData();
+
+
 }

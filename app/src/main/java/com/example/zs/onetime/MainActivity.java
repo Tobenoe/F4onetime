@@ -1,5 +1,6 @@
 package com.example.zs.onetime;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -33,6 +34,9 @@ import com.example.zs.onetime.presenter.PresmanP;
 import com.example.zs.onetime.view.PresmanVinterface;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.hjm.bottomtabbar.BottomTabBar;
+import com.zhy.m.permission.MPermissions;
+import com.zhy.m.permission.PermissionDenied;
+import com.zhy.m.permission.PermissionGrant;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -94,8 +98,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
     @Override
     protected void initData() {
-
-
+        setPermission();
         setmain();
 
         setsilde();
@@ -116,6 +119,50 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
 
     }
+     //6.0动态权限
+    private void setPermission() {
+
+
+        MPermissions.requestPermissions(MainActivity.this, 100,
+                Manifest.permission.READ_CONTACTS,
+                Manifest.permission.RECEIVE_SMS,
+                Manifest.permission.WRITE_CONTACTS,
+                Manifest.permission.CAMERA,
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_WIFI_STATE,
+                Manifest.permission.ACCESS_NETWORK_STATE,
+                Manifest.permission.CHANGE_WIFI_STATE,
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.READ_PHONE_STATE,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                Manifest.permission.INTERNET,
+                Manifest.permission.WAKE_LOCK,
+                Manifest.permission.READ_EXTERNAL_STORAGE
+
+        );
+
+
+
+
+    }
+
+
+    @PermissionGrant(100)
+    public void requestSdcardSuccess()
+    {
+        Toast.makeText(this, "获取权限成功!", Toast.LENGTH_SHORT).show();
+    }
+
+
+
+    @PermissionDenied(100)
+    public void requestSdcardFailed()
+    {
+        Toast.makeText(this, "获取权限失败!", Toast.LENGTH_SHORT).show();
+    }
+
+
+
 
     private void setmain() {
 
@@ -206,7 +253,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
             case R.id.fabu:
 
 
-                Toast.makeText(MainActivity.this,"点击了发布",Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "点击了发布", Toast.LENGTH_SHORT).show();
 
                 Intent intent2 = new Intent(MainActivity.this, IssuevideoActivity.class);
                 startActivity(intent2);
@@ -239,7 +286,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener, 
 
 
     }
-
 
 
     class SlideAdapter extends BaseAdapter {

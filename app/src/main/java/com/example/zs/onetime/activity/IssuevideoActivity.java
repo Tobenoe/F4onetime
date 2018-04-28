@@ -1,9 +1,11 @@
 package com.example.zs.onetime.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.zs.onetime.R;
 import com.example.zs.onetime.base.BaseActivity;
@@ -38,6 +40,9 @@ public class IssuevideoActivity extends BaseActivity implements View.OnClickList
     @Override
     protected void initData() {
 
+
+
+
     }
 
 
@@ -52,6 +57,8 @@ public class IssuevideoActivity extends BaseActivity implements View.OnClickList
                 break;
             case R.id.issue_video:
                 //视频
+                Toast.makeText(IssuevideoActivity.this,"哈哈",Toast.LENGTH_SHORT).show();
+
 
 
                 break;
