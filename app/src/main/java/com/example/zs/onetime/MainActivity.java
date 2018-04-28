@@ -17,6 +17,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.zs.onetime.activity.FabuActivity;
 import com.example.zs.onetime.activity.LoginActivity;
 import com.example.zs.onetime.base.BaseActivity;
 import com.example.zs.onetime.bean.SildeBean;
@@ -44,6 +45,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private ListView mSildeList;
     private List<SildeBean> list;
     private SimpleDraweeView mSildeTouxiang;
+    private SimpleDraweeView mFabu;
+    private ImageView mWj;
+    private ImageView mSz;
 
     @Override
     protected int getLayout() {
@@ -63,6 +67,11 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         mSildeList = (ListView) findViewById(R.id.silde_list);
         mSildeTouxiang = (SimpleDraweeView) findViewById(R.id.silde_touxiang);
         mSildeTouxiang.setOnClickListener(this);
+        mFabu = (SimpleDraweeView) findViewById(R.id.fabu);
+        mFabu.setOnClickListener(this);
+        mWj = (ImageView) findViewById(R.id.wj);
+        mSz = (ImageView) findViewById(R.id.sz);
+        mMyDrawerLayout.setOnClickListener(this);
     }
 
     @Override
@@ -129,7 +138,6 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     }
 
 
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -142,8 +150,17 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
 
                 break;
+            case R.id.fabu:
+                Intent intent1 = new Intent(this, FabuActivity.class);
+                startActivity(intent1);
+
+                break;
+            case R.id.my_drawerLayout:
+                break;
         }
     }
+
+
 
     class SlideAdapter extends BaseAdapter {
 
