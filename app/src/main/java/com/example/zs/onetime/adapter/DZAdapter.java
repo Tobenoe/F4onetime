@@ -28,6 +28,8 @@ import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
 import java.util.List;
 
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
+
 /**
  * Created by 杜晓彤 on 2018/4/26.
  */
@@ -63,8 +65,11 @@ public class DZAdapter extends RecyclerView.Adapter<DZAdapter.MyViewHolder> {
 
             Log.d("TAG", "onBindViewHolder:---------------- ");
             String[] split = imgUrls.split("\\|");
+
             Glide.with(context)
                     .load(split[0])
+                    .bitmapTransform(new CropCircleTransformation(context))
+                    .crossFade(1000)
                     .into(holder.dz_img);
 
         }
