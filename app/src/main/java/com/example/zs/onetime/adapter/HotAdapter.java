@@ -69,7 +69,7 @@ public class HotAdapter extends RecyclerView.Adapter<HotAdapter.hotMyViewHodler>
         String videoUrl = data.get(position).getVideoUrl();
         holder.videoplayer.setUp(videoUrl, data.get(position).getWorkDesc() + "");
         int size = data.get(position).getComments().size();
-        if (size != 0) {
+        if (size != 0 && !data.equals("")) {
 
             holder.hot_item_plr.setText(data.get(position).getComments().get(0).getNickname()+":");
             holder.hot_item_plcotext.setText(data.get(position).getComments().get(0).getContent());

@@ -7,6 +7,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
 import com.example.zs.onetime.R;
 import com.example.zs.onetime.base.BaseActivity;
 import com.example.zs.onetime.presenter.LoginP;
@@ -56,6 +57,8 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                 break;
             case R.id.other_back:
                 //返回页面
+                Intent intent1 = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent1);
                 finish();
 
                 break;

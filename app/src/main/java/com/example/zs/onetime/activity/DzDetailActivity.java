@@ -43,6 +43,7 @@ public class DzDetailActivity extends BaseActivity implements IDetailView,IPinlu
     private TextView fasong;
     private List<String> list;
     private String s;
+    private ImageView fenxiang;
 
     @Override
     protected int getLayout() {
@@ -60,7 +61,7 @@ public class DzDetailActivity extends BaseActivity implements IDetailView,IPinlu
         et_pinlun = findViewById(R.id.et_pinlun);//评论内容
         fasong = findViewById(R.id.fasong);//发送
 
-
+        fenxiang = findViewById(R.id.rawfenxiang);//分享
     }
 
     //逻辑操作
@@ -89,26 +90,18 @@ public class DzDetailActivity extends BaseActivity implements IDetailView,IPinlu
                     pinlunPresenter.showPinToView(s,new PinlunModel(pinlunPresenter),DzDetailActivity.this);
                     list = new ArrayList<>();
                     list.add(s);
+
+                    et_pinlun.setText("");//清空
                 }
             }
         });
 
-
-        SharedPreferences sp = getSharedPreferences("content", DzDetailActivity.MODE_PRIVATE);
-        sp.edit().putString("content", "s").commit();
-
-
-        SharedPreferences content = getSharedPreferences("content", DzDetailActivity.MODE_PRIVATE);
-        String name = sp.getString("content", s);
         Intent intent = getIntent();
         jid = intent.getIntExtra("jid", 2209);
 
         //调用p层
         DZDetailPresenter dzDetailPresenter=new DZDetailPresenter();
         dzDetailPresenter.showDeatilToView(new DZDetailModel(dzDetailPresenter),DzDetailActivity.this);
-
-
-
     }
 
 
@@ -139,6 +132,7 @@ public class DzDetailActivity extends BaseActivity implements IDetailView,IPinlu
             //创建适配器
             PinlunAdapter pinlunAdapter=new PinlunAdapter(list,DzDetailActivity.this);
             jokedetail_recycler.setAdapter(pinlunAdapter);
+
         }else{
             Toast.makeText(DzDetailActivity.this,"评论失败",Toast.LENGTH_SHORT).show();
         }

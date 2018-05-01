@@ -20,7 +20,12 @@ public class Api {
 
 //    注册接口 https://www.zhaoapi.cn/quarter/register
     public static final  String REGISTER = ONTETIME;
-//
+
+
+   //   https://www.zhaoapi.cn/user/getUserInfo
+        public static final  String PRESNMAN = "https://www.zhaoapi.cn/user/getUserInfo";
+
+
 //      //发布视频
 //      public static final String RELESE = ONTETIME+"publishVideo ";
 //
