@@ -120,6 +120,7 @@ public class DzDetailActivity extends BaseActivity implements IDetailView,IPinlu
 
     }
 
+    //展示评论
     @Override
     public void showpinlun(Object o) {
 
