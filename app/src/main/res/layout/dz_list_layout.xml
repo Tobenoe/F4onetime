@@ -21,8 +21,8 @@
             app:fab_size="mini"
             app:fab_icon="@drawable/pinbi"
             android:id="@+id/pinbi"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="10dp"
+            android:layout_height="10dp" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             app:fab_title="@string/lianjie"
@@ -30,13 +30,13 @@
             app:fab_icon="@drawable/lianjie"
             app:fab_size="mini"
             android:id="@+id/lianjie"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_width="10dp"
+            android:layout_height="10dp" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/jubao"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
             android:layout_alignBottom="@+id/dz_img"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
@@ -92,7 +92,7 @@
         android:layout_marginLeft="80px"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="20px"
+        android:textSize="30px"
         android:text="关注"
         android:layout_below="@id/dz_content"
         />

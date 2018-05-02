@@ -44,6 +44,10 @@ public class DzDetailActivity extends BaseActivity implements IDetailView,IPinlu
     private List<String> list;
     private String s;
     private ImageView fenxiang;
+    private ImageView leftxin;
+    private ImageView rawxin;
+    private boolean ischeck;
+    private boolean isflag;
 
     @Override
     protected int getLayout() {
@@ -60,7 +64,10 @@ public class DzDetailActivity extends BaseActivity implements IDetailView,IPinlu
         jokedetail_recycler = findViewById(R.id.jokedetail_recycler);
         et_pinlun = findViewById(R.id.et_pinlun);//评论内容
         fasong = findViewById(R.id.fasong);//发送
-
+        //关注
+        leftxin = findViewById(R.id.leftxin);
+        //取消关注
+        rawxin = findViewById(R.id.rawxin);
         fenxiang = findViewById(R.id.rawfenxiang);//分享
     }
 
@@ -93,6 +100,40 @@ public class DzDetailActivity extends BaseActivity implements IDetailView,IPinlu
 
                     et_pinlun.setText("");//清空
                 }
+            }
+        });
+        //关注
+        leftxin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (ischeck == false) {
+                    leftxin.setImageResource(R.drawable.left_xin);
+
+                    ischeck = true;
+                } else {
+                    leftxin.setImageResource(R.drawable.raw_querenxin);
+
+                    ischeck = false;
+                }
+            }
+        });
+        //取消关注
+        rawxin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (isflag == false) {
+                    rawxin.setImageResource(R.drawable.raw_xin);
+                    isflag = true;
+                } else {
+                    rawxin.setImageResource(R.drawable.raw_xinsui);
+                    isflag = false;
+                }
+            }
+        });
+        fenxiang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(DzDetailActivity.this, "分享", Toast.LENGTH_SHORT).show();
             }
         });
 
